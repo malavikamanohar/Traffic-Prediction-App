@@ -19,8 +19,6 @@ st.set_page_config(
     }
 )
 
-
-
 # Load the model
 try:
     model = joblib.load('./model/newtraffic_model.pkl')
