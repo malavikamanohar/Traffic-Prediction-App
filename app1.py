@@ -6,7 +6,6 @@ import seaborn as sns
 from sklearn.metrics import mean_squared_error, r2_score
 import subprocess  # Import subprocess module
 
-
 # Set page configuration
 st.set_page_config(
     page_title="Traffic Prediction",
@@ -64,6 +63,7 @@ def parse_time(time_str):
         st.error("Invalid time format. Please use HH:MM format.")
         return None
 
+
 # Main function
 def main():
     st.title('Traffic Prediction')
@@ -99,6 +99,8 @@ def main():
         if selected_time is None:
             return  # Stop execution if the time is invalid
 
+
+        
         # Extracting year, month, day, hour, day of the week from the selected date and time
         year = selected_date.year
         month = selected_date.month
@@ -161,6 +163,7 @@ def main():
             'East Berlin': 3,
             'West Berlin': 4
         }
+
         
         plt.figure(figsize=(12, 6))
         sns.lineplot(x='DateTime', y='Vehicles', hue='ZoneName', data=Traffic_prediction, palette='tab10')
@@ -192,6 +195,7 @@ def main():
         plt.xticks(range(0, 24))
         st.pyplot(plt)
 
+        
         # Average traffic volume by day of the week
         Traffic_prediction['DayOfWeek'] = Traffic_prediction['DateTime'].dt.day_name()
         weekly_traffic = Traffic_prediction.groupby('DayOfWeek')['Vehicles'].mean().reindex(
