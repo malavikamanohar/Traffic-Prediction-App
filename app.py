@@ -6,7 +6,7 @@ import seaborn as sns
 from sklearn.metrics import mean_squared_error, r2_score
 import subprocess  # Import subprocess module
 
-# Set page configuration
+# To Set page configuration
 st.set_page_config(
     page_title="Traffic Congestion Prediction",
     page_icon="🚦",
@@ -26,7 +26,7 @@ except Exception as e:
     st.error(f"Error loading the model: {e}")
     st.stop()
 
-# Load the data
+# To Load the data
 @st.cache_data
 def load_data():
     ##url = "https://drive.google.com/file/d/1WA4SUMm30vSNkENpuiOyTESt64yPdH0_/view?usp=sharing"
@@ -45,7 +45,7 @@ def load_data():
 
 Traffic_prediction = load_data()
 
-# Zone mapping dictionary
+# To Zone mapping dictionary
 zone_mapping = {
     1: 'North Berlin',
     2: 'South Berlin',
